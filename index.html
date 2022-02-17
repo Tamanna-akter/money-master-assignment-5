@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Bootstrap CSS stylesheet  -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <!-- Vanilla CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+    <!-- header part -->
+    <header>
+        <h2 class="text-center mt-4 mb-4 text-primary fw-bold">Budget Calculation</h2>
+    </header>
+    <main>
+        <section>
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-md-6 col-sm-12">
+                        <img src="images/pic.jpg" class="w-75 mx-auto" alt="">
+                    </div>
+                    <!-- form-section -->
+                    <div class="col-md-6 col-sm-12">
+                        <div class="form-section text-center">
+                            <br>
+                            <h2 class="fw-bold">Income</h2>
+                            <div class="mb-3 row">
+                                <label for="income" class="col-sm-2 col-form-label">Income:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control w-75" id="income-input">
+                                </div>
+                            </div>
+                            <!-- Expense-field -->
+                            <div>
+                                <h2 class="fw-bold">Expenses</h2>
+                            </div>
+                            <!-- food -->
+                            <div class="mb-3 row">
+                                <label for="food" class="col-sm-2 col-form-label">Food:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control w-75" id="food-input">
+                                </div>
+                            </div>
+                            <!-- rent -->
+                            <div class="mb-3 row">
+                                <label for="rent" class="col-sm-2 col-form-label">Rent:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control w-75" id="rent-input">
+                                </div>
+                            </div>
+                            <!-- clothes -->
+                            <div class="mb-3 row">
+                                <label for="clothes" class="col-sm-2 col-form-label">clothes:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control w-75" id="clothes-input">
+                                </div>
+                            </div>
+                            <!-- calculate-button -->
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <button type="button" id="calculate-button"
+                                    class="btn btn-primary btn-lg mb-4">Calculate</button>
+                            </div>
+                            <!-- Total balance field -->
+                            <div>
+                                <h3>Total Expenses: <span id="expense-total"> 00</span></h3>
+                                <h3>Balance: <span id="total-balance">00</span></h3>
+                            </div>
+                            <!-- savings input field -->
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <label for="save">Save:</label>
+                                    <input class="w-25" type="text" id="save-input">
+                                    <span>%</span>
+                                    <button id="save-button" class="btn btn-primary btn-lg" type="submit">Save</button>
+                                </div>
+
+                            </div>
+                            <!-- savings and remaining balance -->
+                            <div class="mt-4">
+                                <h3 id="savings" class="fw-bold"> Saving Amount: <span id="savings-balance">00</span>
+                                </h3>
+                                <h3 id="remaining" class="fw-bold">Remaining Balance: <span
+                                        id="remaining-balance">00</span></h3>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--bootstrap Javascript-->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- vanilla Javascript -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

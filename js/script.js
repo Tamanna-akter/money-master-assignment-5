@@ -1,41 +1,12 @@
 
-// document.getElementById('calculate-button').addEventListener('click', function () {
-//     const incomeText = document.getElementById('income-input');
-//     const incomeAmount = (incomeText.value);
-//     // incomeText.value = "";
+document.getElementById('button-1').addEventListener('click', function () {
+    calculateTotal();
 
-//     const foodText = document.getElementById('food-input');
-//     const foodAmount = foodText.value;
-//     foodText.value = "";
-//     const rentText = document.getElementById('rent-input');
-//     const rentAmount = rentText.value;
-//     rentText.value = "";
-//     const clothesText = document.getElementById('clothes-input');
-//     const clothesAmount = clothesText.value;
-//     clothesText.value = "";
-//     const expensesTotal = document.getElementById('expense-total');
-//     const currentTotalBalance = document.getElementById('total-balance');
-//     const total = parseFloat(foodAmount) + parseFloat(rentAmount) + parseFloat(clothesAmount);
-//     expensesTotal.innerText = total;
-//     currentTotalBalance.innerText = parseFloat(incomeAmount) - expensesTotal.innerText;
-// });
+})
 
-// document.getElementById('save-button').addEventListener('click', function () {
-//     const savingsInputText = document.getElementById('save-input');
-//     const incomeText = document.getElementById('income-input');
-//     const incomeAmount = incomeText.value;
-//     const savingsPercentValue = savingsInputText.value;
-//     const savings = (incomeAmount * parseInt(savingsPercentValue) / 100);
-//     const savingsBalance = document.getElementById('savings-balance');
-//     savingsBalance.innerText = savings;
-
-//     const currentTotalBalance = document.getElementById('total-balance').innerText;
-//     const remainingBalanceText = document.getElementById('remaining-balance');
-//     const remainingBalance = remainingBalanceText.innerText;
-
-//     const remaining = currentTotalBalance - savingsBalance.innerText;
-//     remainingBalanceText.innerText = remaining;
-// })
+document.getElementById('button-2').addEventListener('click', function () {
+    savingsTotal();
+})
 
 function inputField(inputFieldId) {
     const inputArea = document.getElementById(inputFieldId).value;
@@ -74,30 +45,33 @@ function calculateTotal() {
 }
 
 function savingsTotal() {
+
     const balanceText = document.getElementById('total-balance').innerText;
     const balanceAmount = parseFloat(balanceText);
 
-    const incomeAmount = inputField('income-input');
-    const saveingsBalance = inputField('savings-balance');
+    const savingsText = document.getElementById('save-input').value;
+    const savingsAmount = parseFloat(savingsText);
 
-    const savings = (incomeAmount * saveingsBalance) / 100;
+    const incomeText = document.getElementById('income-input').value;
+    const incomeAmount = parseFloat(incomeText);
+
+
+    const savings = (incomeAmount * savingsAmount) / 100;
     const remainingBalance = balanceAmount - savings;
 
-    if (saveingsBalance < 0 || isNaN(saveingsBalance)) {
+    if (savingsAmount < 0 || isNaN(savingsAmount)) {
+
+        document.getElementById('savings-balance').innerText = 00;
+        document.getElementById('remaining-balance').innerText = 00;
         alert('Please input valid number')
-    } else if (balanceAmount < savings || balanceAmount <= 0) {
+    }
+    else if (balanceAmount < savings || balanceAmount <= 0) {
         alert('Dont have enough money in your account')
     }
+
     else {
         document.getElementById('savings-balance').innerText = savings;
         document.getElementById('remaining-balance').innerText = remainingBalance;
     }
 }
-document.getElementById('button-1').addEventListener('click', function () {
-    calculateTotal();
-    //console.log(calculate());
-})
 
-document.getElementById('button-2').addEventListener('click', function () {
-    savingsTotal();
-})
